@@ -1,0 +1,17 @@
+[user]
+# Please adapt and uncomment the following lines:
+    name = gzxultra
+    email = mygladfinger@gmail.com
+
+#[http]
+#        proxy = socks5://127.0.0.1:1086
+#[https]
+#        proxy = socks5://127.0.0.1:1086
+
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+
+[push]
+	default = simple
