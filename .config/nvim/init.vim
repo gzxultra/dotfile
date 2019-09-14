@@ -7,6 +7,9 @@ Plug 'vim-scripts/ctags.vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'wlangstroth/vim-racket'
+Plug 'vim-scripts/scribble.vim'
+Plug 'raimondi/delimitmate'
 
 
 call plug#end()
@@ -58,6 +61,7 @@ let ayucolor="mirage"
 colorscheme ayu
 
 " autocmd vimenter * NERDTree
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -71,7 +75,7 @@ let g:NERDDefaultAlign = 'left'
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 0
 
 " Return to last edit position when opening files (You want this!)
@@ -79,6 +83,13 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
+
+if has("autocmd")
+    au BufReadPost *.rkt,*.rktl set filetype=scheme
+    au filetype racket set lisp
+    au filetype racket set autoindent
+endif
 
 if exists('$TMUX')
   " Colors in tmux
@@ -91,4 +102,3 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
