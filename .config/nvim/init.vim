@@ -45,9 +45,10 @@ set hlsearch                    " highlight searches
 set incsearch                   " do incremental searching
 set ignorecase                  " ignore case when searching
 set smartcase                   " no ignorecase if Uppercase char present
+:set pastetoggle=<f5>
 
 " Identify invisible characters and don't show them by default
-set list listchars=eol:¬,tab:▸\ ,trail:.,
+set list listchars=tab:▸\ ,trail:.,
 
 " Default indenting options
 set autoindent smartindent
